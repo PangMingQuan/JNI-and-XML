@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="Order.xsl"?> 
+
+
+<!DOCTYPE PurchaseOrder SYSTEM "OrderDTD.dtd" [
+	<!ENTITY FoodLaiName "FoodLai Malaysia Sdn. Bhd.">
+	<!ENTITY FoodLaiAddress "No. 9, Jln Yexing, Taman Yexing, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.">
+	<!ENTITY FoodLaiCustomerServiceEmail "shfw@foodlai.com">
+	<!ENTITY FoodLaiCustomerServiceContact "+60 15-333 9999">
+]>
+
+<PurchaseOrder>
+	<IDRefer>
+		<FoodLaiUser>
+			<User UserID="U1001" />
+			<User UserID="U1002" />
+			<User UserID="U1003" />
+			<User UserID="U1005" />
+			<User UserID="U1006" />
+			<User UserID="U1007" />
+			<User UserID="U1008" />
+			<User UserID="U1009" />
+		</FoodLaiUser>
+		<FoodLaiRestaurant>
+			<Restaurant RestaurantID="R20200826R9">
+				<Dish DishID="M20200826R9D8" />
+				<Dish DishID="M20200826R9D9" />
+				<Dish DishID="M20200826R9D10" />
+				<Dish DishID="M20200826R9DA1" />
+				<Dish DishID="M20200826R9DA2" />
+				<Dish DishID="M20200826R9DK1" />
+				<Dish DishID="M20200826R9DK2" />
+			</Restaurant>
+			<Restaurant RestaurantID="R20200826R10">
+				<Dish DishID="M20200826R10D8" />
+				<Dish DishID="M20200826R10D9" />
+				<Dish DishID="M20200826R10D10" />
+				<Dish DishID="M20200826RD10A1" />
+				<Dish DishID="M20200826R10DA2" />
+				<Dish DishID="M20200826R10DA3" />
+				<Dish DishID="M20200826R10DK1" />
+				<Dish DishID="M20200826R10DK2" />
+				<Dish DishID="M20200826R10DK3" />
+			</Restaurant>
+			<Restaurant RestaurantID="R20200826R11">
+				<Dish DishID="M20200826R11D8" />
+				<Dish DishID="M20200826R11D9" />
+				<Dish DishID="M20200826R11D10" />
+				<Dish DishID="M20200826R11DA1" />
+				<Dish DishID="M20200826R11DA2" />
+				<Dish DishID="M20200826R11DA3" />
+				<Dish DishID="M20200826R11DK1" />
+				<Dish DishID="M20200826R11DK2" />
+			</Restaurant>
+		</FoodLaiRestaurant>
+		<FoodLaiRider>
+			<Rider RiderID="H20200826H1" />
+			<Rider RiderID="H20200826H101" />
+			<Rider RiderID="H20200826H2" />
+			<Rider RiderID="H20200826H102" />
+		</FoodLaiRider>
+		<FoodLaiDiscount>
+			<Discount DiscountCode="S9001" />
+			<Discount DiscountCode="S9002" />
+			<Discount DiscountCode="S9003" />
+		</FoodLaiDiscount>
+	</IDRefer>
+	<Order OrderID="Y20200826Y9">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1001">
+			<OrderUserName>Lee Ah Beng</OrderUserName>
+			<OrderUserContact>0135789623</OrderUserContact>
+			<OrderUserAddress>No. 16, Jln Jambu Mawar 66, Taman Jambu Mawar, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R9">
+			<OrderRestaurantName>YS CharKwayTeow</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R9D8">
+				<OrderDishDescription>CharKwayTeow -Biasa</OrderDishDescription>
+				<OrderDishPrice Currency="RM">5</OrderDishPrice>
+				<OrderDishQuantity>3</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">15</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R9D9">
+				<OrderDishDescription>CharKwayTeow +2Telur</OrderDishDescription>
+				<OrderDishPrice Currency="RM">8</OrderDishPrice>
+				<OrderDishQuantity>2</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">16</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H1">
+			<OrderRiderName>Ah Lai</OrderRiderName>
+			<OrderRiderContact>0151593570</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200826Y9">
+			<InvoiceTime>26/8/2020 17:55:12</InvoiceTime>
+			<DeliveryFee Currency="RM">5</DeliveryFee>
+			<OrderDiscount OrderDiscountCode="S9003">
+					<OrderDiscountTotal Currency="RM">3</OrderDiscountTotal>
+			</OrderDiscount>
+			<PaymentTotal Currency="RM" Method="Cash">33</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Done" />
+	</Order>
+	<Order OrderID="Y20200827Y1">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1002">
+			<OrderUserName>Rees Simpson</OrderUserName>
+			<OrderUserContact>0187963565</OrderUserContact>
+			<OrderUserAddress>No. 333, Jln Jambu Mawar 333, Taman Jambu Mawar, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R9">
+			<OrderRestaurantName>YS CharKwayTeow</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R9D10">
+				<OrderDishDescription>CharKwayTeow +1Telur</OrderDishDescription>
+				<OrderDishPrice Currency="RM">6.5</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">6.5</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R9DK1">
+				<OrderDishDescription>Kopi O</OrderDishDescription>
+				<OrderDishPrice Currency="RM">0.8</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">0.8</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H2">
+			<OrderRiderName>Mike</OrderRiderName>
+			<OrderRiderContact>0169857742</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200827Y1">
+			<InvoiceTime>27/8/2020 12:35:31</InvoiceTime>
+			<DeliveryFee Currency="RM">5</DeliveryFee>
+			<OrderDiscount OrderDiscountCode="S9003">
+					<OrderDiscountTotal Currency="RM">3</OrderDiscountTotal>
+			</OrderDiscount>
+			<PaymentTotal Currency="RM" Method="Cash">9.3</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Done" />
+	</Order>
+	<Order OrderID="Y20200827Y2">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1003">
+			<OrderUserName>Henna Kline</OrderUserName>
+			<OrderUserContact>0109854464</OrderUserContact>
+			<OrderUserAddress>No. 32, Lorong Nangka 4, Taman Desa Damai, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R10">
+			<OrderRestaurantName>JW WesternFood</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R10D9">
+				<OrderDishDescription>Fish and Chips</OrderDishDescription>
+				<OrderDishPrice Currency="RM">13</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">13</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R10DK2">
+				<OrderDishDescription>Iced lemon tea</OrderDishDescription>
+				<OrderDishPrice Currency="RM">4.8</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">4.8</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H101">
+			<OrderRiderName>Kaizer</OrderRiderName>
+			<OrderRiderContact>0158257193</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200827Y2">
+			<InvoiceTime>27/8/2020 16:19:05</InvoiceTime>
+			<DeliveryFee Currency="RM">5</DeliveryFee>
+			<OrderDiscount OrderDiscountCode="S9001">
+					<OrderDiscountTotal Currency="RM">10</OrderDiscountTotal>
+			</OrderDiscount>
+			<PaymentTotal Currency="RM" Method="Cash">12.8</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Done" />
+	</Order>
+	<Order OrderID="Y20200827Y3">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1005">
+			<OrderUserName>Tan Hong Bock</OrderUserName>
+			<OrderUserContact>0129935586</OrderUserContact>
+			<OrderUserAddress>No. 10, Lorong Nangka 10, Taman Desa Damai, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R11">
+			<OrderRestaurantName>QC FriedRice</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R11D9">
+				<OrderDishDescription>Pork chop fried rice</OrderDishDescription>
+				<OrderDishPrice Currency="RM">10.5</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">10.5</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R11D10">
+				<OrderDishDescription>Shrimp fried rice</OrderDishDescription>
+				<OrderDishPrice Currency="RM">8.5</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">8.5</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R11DA1">
+				<OrderDishDescription>Deep fried pork chop</OrderDishDescription>
+				<OrderDishPrice Currency="RM">6</OrderDishPrice>
+				<OrderDishQuantity>2</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">12</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H1">
+			<OrderRiderName>Ah Lai</OrderRiderName>
+			<OrderRiderContact>0151593570</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200827Y3">
+			<InvoiceTime>27/8/2020 18:15:13</InvoiceTime>
+			<DeliveryFee Currency="RM">6</DeliveryFee>
+			<PaymentTotal Currency="RM" Method="Cash">37</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Cancel" />
+	</Order>
+	<Order OrderID="Y20200828Y1">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1006">
+			<OrderUserName>Chong Kah Cheng</OrderUserName>
+			<OrderUserContact>0177413995</OrderUserContact>
+			<OrderUserAddress>No. 4, Lorong Nangka 2, Taman Desa Damai, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R9">
+			<OrderRestaurantName>YS CharKwayTeow</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R9DK1">
+				<OrderDishDescription>Kopi O</OrderDishDescription>
+				<OrderDishPrice Currency="RM">0.8</OrderDishPrice>
+				<OrderDishQuantity>3</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">2.4</OrderDishSubTotal>
+				</OrderDish>
+			<OrderDish OrderDishID="M20200826R9DK2">
+				<OrderDishDescription>Kopi O Ice</OrderDishDescription>
+				<OrderDishPrice Currency="RM">1.2</OrderDishPrice>
+				<OrderDishQuantity>3</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">3.6</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H102">
+			<OrderRiderName>Ling</OrderRiderName>
+			<OrderRiderContact>0178654534</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200828Y1">
+			<InvoiceTime>28/8/2020 09:03:51</InvoiceTime>
+			<DeliveryFee Currency="RM">6</DeliveryFee>
+			<PaymentTotal Currency="RM" Method="Cash">12</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Done" />
+	</Order>
+	<Order OrderID="Y20200828Y2">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1007">
+			<OrderUserName>Wong Kar Lok</OrderUserName>
+			<OrderUserContact>0199856321</OrderUserContact>
+			<OrderUserAddress>No. 6, Lorong Belimbing 1, Taman Belimbing, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R10">
+			<OrderRestaurantName>JW WesternFood</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R10D10">
+				<OrderDishDescription>Steak</OrderDishDescription>
+				<OrderDishPrice Currency="RM">22</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">22</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R10D8">
+				<OrderDishDescription>Chicken chop</OrderDishDescription>
+				<OrderDishPrice Currency="RM">15</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">15</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826RD10A1">
+				<OrderDishDescription>French fries</OrderDishDescription>
+				<OrderDishPrice Currency="RM">5</OrderDishPrice>
+				<OrderDishQuantity>2</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">10</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R10DA3">
+				<OrderDishDescription>Chicken nugget</OrderDishDescription>
+				<OrderDishPrice Currency="RM">8</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">8</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R10DK1">
+				<OrderDishDescription>Coca Cola</OrderDishDescription>
+				<OrderDishPrice Currency="RM">3</OrderDishPrice>
+				<OrderDishQuantity>2</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">6</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H101">
+			<OrderRiderName>Kaizer</OrderRiderName>
+			<OrderRiderContact>0158257193</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200828Y2">
+			<InvoiceTime>28/8/2020 09:30:55</InvoiceTime>
+			<DeliveryFee Currency="RM">4</DeliveryFee>
+			<OrderDiscount OrderDiscountCode="S9003">
+				<OrderDiscountTotal Currency="RM">3</OrderDiscountTotal>
+			</OrderDiscount>
+			<PaymentTotal Currency="RM" Method="Cash">62</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Done" />
+	</Order>
+	<Order OrderID="Y20200828Y3">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1008">
+			<OrderUserName>Lim Eng Wah</OrderUserName>
+			<OrderUserContact>0167783225</OrderUserContact>
+			<OrderUserAddress>No. 9, Lorong Jambu Madu 4, Taman Jambu Madu, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R11">
+			<OrderRestaurantName>QC FriedRice</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R11D8">
+				<OrderDishDescription>Egg fried rice</OrderDishDescription>
+				<OrderDishPrice Currency="RM">5</OrderDishPrice>
+				<OrderDishQuantity>10</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">50</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R11DK1">
+				<OrderDishDescription>Herbal tea</OrderDishDescription>
+				<OrderDishPrice Currency="RM">4</OrderDishPrice>
+				<OrderDishQuantity>10</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">40</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H2">
+			<OrderRiderName>Mike</OrderRiderName>
+			<OrderRiderContact>0169857742</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200828Y3">
+			<InvoiceTime>28/8/2020 10:22:06</InvoiceTime>
+			<DeliveryFee Currency="RM">4</DeliveryFee>
+			<PaymentTotal Currency="RM" Method="Cash">94</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Cancel" />
+	</Order>
+	<Order OrderID="Y20200828Y4">
+		<FoodLai>
+			<CompanyName>&FoodLaiName;</CompanyName>
+			<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+			<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+			<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		</FoodLai>
+		<OrderUser OrderUserID="U1009">
+			<OrderUserName>Gwee How Peng</OrderUserName>
+			<OrderUserContact>0177123221</OrderUserContact>
+			<OrderUserAddress>No. 2, Lorong Jambu Madu 2, Taman Jambu Madu, 14000</OrderUserAddress>
+		</OrderUser>
+		<OrderRestaurant OrderRestaurantID="R20200826R11">
+			<OrderRestaurantName>QC FriedRice</OrderRestaurantName>
+			<OrderDish OrderDishID="M20200826R11D10">
+				<OrderDishDescription>Shrimp fried rice</OrderDishDescription>
+				<OrderDishPrice Currency="RM">8.5</OrderDishPrice>
+				<OrderDishQuantity>1</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">8.5</OrderDishSubTotal>
+			</OrderDish>
+			<OrderDish OrderDishID="M20200826R11DA3">
+				<OrderDishDescription>Luncheon meat</OrderDishDescription>
+				<OrderDishPrice Currency="RM">2</OrderDishPrice>
+				<OrderDishQuantity>5</OrderDishQuantity>
+				<OrderDishSubTotal Currency="RM">10</OrderDishSubTotal>
+			</OrderDish>
+		</OrderRestaurant>
+		<OrderRider OrderRiderID="H20200826H102">
+			<OrderRiderName>Ling</OrderRiderName>
+			<OrderRiderContact>0178654534</OrderRiderContact>
+		</OrderRider>
+		<Invoice InvoiceID="Y20200828Y4">
+			<InvoiceTime>28/8/2020 11:36:42</InvoiceTime>
+			<DeliveryFee Currency="RM">4</DeliveryFee>
+			<OrderDiscount OrderDiscountCode="S9003">
+				<OrderDiscountTotal Currency="RM">3</OrderDiscountTotal>
+			</OrderDiscount>
+			<PaymentTotal Currency="RM" Method="Cash">19.5</PaymentTotal>
+		</Invoice>
+		<OrderStatus Type="Done" />
+	</Order>
+</PurchaseOrder>

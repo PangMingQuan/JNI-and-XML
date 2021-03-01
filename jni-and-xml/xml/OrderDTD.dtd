@@ -1,0 +1,58 @@
+
+<!ELEMENT PurchaseOrder (IDRefer, Order*)>
+	<!ELEMENT IDRefer (FoodLaiUser, FoodLaiRestaurant, FoodLaiRider, FoodLaiDiscount)>
+		<!ELEMENT FoodLaiUser (User*)>
+			<!ELEMENT User EMPTY>
+				<!ATTLIST User UserID ID #REQUIRED>
+		<!ELEMENT FoodLaiRestaurant (Restaurant*)>
+			<!ELEMENT Restaurant (Dish+)>
+				<!ATTLIST Restaurant RestaurantID ID #REQUIRED>
+				<!ELEMENT Dish EMPTY>
+					<!ATTLIST Dish DishID ID #REQUIRED>
+		<!ELEMENT FoodLaiRider (Rider*)>
+			<!ELEMENT Rider EMPTY>
+				<!ATTLIST Rider RiderID ID #REQUIRED>
+		<!ELEMENT FoodLaiDiscount (Discount*)>
+			<!ELEMENT Discount EMPTY>
+				<!ATTLIST Discount DiscountCode ID #REQUIRED>
+	<!ELEMENT Order (FoodLai, OrderUser, OrderRestaurant, OrderRider, Invoice, OrderStatus)>
+		<!ATTLIST Order OrderID ID #REQUIRED>
+		<!ELEMENT FoodLai (CompanyName, CompanyAddress, CustomerServiceEmail, CustomerServiceContact)>
+			<!ELEMENT CompanyName (#PCDATA)>
+			<!ELEMENT CompanyAddress (#PCDATA)>
+			<!ELEMENT CustomerServiceEmail (#PCDATA)>
+			<!ELEMENT CustomerServiceContact (#PCDATA)>
+		<!ELEMENT OrderUser (OrderUserName, OrderUserContact, OrderUserAddress)>
+			<!ATTLIST OrderUser OrderUserID IDREF #REQUIRED>
+			<!ELEMENT OrderUserName (#PCDATA)>
+			<!ELEMENT OrderUserContact (#PCDATA)>
+			<!ELEMENT OrderUserAddress (#PCDATA)>
+		<!ELEMENT OrderRestaurant (OrderRestaurantName, OrderDish+)>
+			<!ATTLIST OrderRestaurant OrderRestaurantID IDREF #REQUIRED>
+			<!ELEMENT OrderRestaurantName (#PCDATA)>
+			<!ELEMENT OrderDish (OrderDishDescription, OrderDishPrice, OrderDishQuantity, OrderDishSubTotal)>
+				<!ATTLIST OrderDish OrderDishID IDREF #REQUIRED>
+				<!ELEMENT OrderDishDescription (#PCDATA)>
+				<!ELEMENT OrderDishPrice (#PCDATA)>
+					<!ATTLIST OrderDishPrice Currency CDATA #FIXED "RM">
+				<!ELEMENT OrderDishQuantity (#PCDATA)>
+				<!ELEMENT OrderDishSubTotal (#PCDATA)>
+					<!ATTLIST OrderDishSubTotal Currency CDATA #FIXED "RM">
+		<!ELEMENT OrderRider (OrderRiderName, OrderRiderContact)>
+			<!ATTLIST OrderRider OrderRiderID IDREF #REQUIRED>
+			<!ELEMENT OrderRiderName (#PCDATA)>
+			<!ELEMENT OrderRiderContact (#PCDATA)>
+		<!ELEMENT Invoice (InvoiceTime, DeliveryFee, OrderDiscount?, PaymentTotal)>
+			<!ATTLIST Invoice InvoiceID IDREF #REQUIRED>
+			<!ELEMENT InvoiceTime (#PCDATA)>
+			<!ELEMENT DeliveryFee (#PCDATA)>
+				<!ATTLIST DeliveryFee Currency CDATA #FIXED "RM">
+			<!ELEMENT OrderDiscount (OrderDiscountTotal)>
+				<!ATTLIST OrderDiscount OrderDiscountCode IDREF #REQUIRED>
+				<!ELEMENT OrderDiscountTotal (#PCDATA)>
+					<!ATTLIST OrderDiscountTotal Currency CDATA #FIXED "RM">
+			<!ELEMENT PaymentTotal (#PCDATA)>
+				<!ATTLIST PaymentTotal Currency CDATA #FIXED "RM">
+				<!ATTLIST PaymentTotal Method (Cash|Credit) "Cash">
+		<!ELEMENT OrderStatus ANY>
+			<!ATTLIST OrderStatus Type (Process|Cancel|Done) "Process">

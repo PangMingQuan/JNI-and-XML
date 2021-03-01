@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="FoodLai.xsl"?>
+
+
+<!DOCTYPE FoodLai [
+	<!ENTITY FoodLaiName "FoodLai Malaysia Sdn. Bhd.">
+	<!ENTITY FoodLaiAddress "No. 9, Jln Yexing, Taman Yexing, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.">
+	<!ENTITY FoodLaiCustomerServiceEmail "shfw@foodlai.com">
+	<!ENTITY FoodLaiCustomerServiceContact "0 15-333 9999">
+	<!ELEMENT FoodLai (FoodLaiMalaysia, FoodLaiUser, FoodLaiRestaurant, FoodLaiRider, FoodLaiDiscount, FoodLaiStaffInfo, FoodLaiEmployee, FoodLaiRemark)>
+		<!ELEMENT FoodLaiMalaysia (CompanyName, CompanyAddress+, CustomerServiceEmail+, CustomerServiceContact+, FoodLaiSlogan+)>
+			<!ELEMENT CompanyName (#PCDATA)>
+			<!ELEMENT CompanyAddress (#PCDATA)>
+			<!ELEMENT CustomerServiceEmail (#PCDATA)>
+			<!ELEMENT CustomerServiceContact (#PCDATA)>
+			<!ELEMENT FoodLaiSlogan (#PCDATA)>
+		<!ELEMENT FoodLaiUser (User*)>
+			<!ELEMENT User (UserName, UserEmail, UserContact, UserAddress)>
+				<!ATTLIST User UserID ID #REQUIRED>
+				<!ELEMENT UserName (#PCDATA)>
+				<!ELEMENT UserEmail (#PCDATA)>
+				<!ELEMENT UserContact (#PCDATA)>
+				<!ELEMENT UserAddress (#PCDATA)>
+		<!ELEMENT FoodLaiRestaurant (Restaurant*)>
+			<!ELEMENT Restaurant (RestaurantName, RestaurantEmail+, RestaurantContact+, RestaurantAddress, RestaurantPermit, RestaurantPermitExpired, RestaurantMenu+, RestaurantCommission)>
+				<!ATTLIST Restaurant RestaurantID ID #REQUIRED>
+				<!ELEMENT RestaurantName (#PCDATA)>
+				<!ELEMENT RestaurantEmail (#PCDATA)>
+				<!ELEMENT RestaurantContact (#PCDATA)>
+				<!ELEMENT RestaurantAddress (#PCDATA)>
+				<!ELEMENT RestaurantPermit (#PCDATA)>
+				<!ELEMENT RestaurantPermitExpired (#PCDATA)>
+				<!ELEMENT RestaurantMenu (Dish+)>
+					<!ATTLIST RestaurantMenu Type (Food|AddOn|Drink) "Food">
+					<!ELEMENT Dish (DishDescription, DishPrice)>
+						<!ATTLIST Dish DishID ID #REQUIRED>
+						<!ELEMENT DishDescription (#PCDATA)>
+						<!ELEMENT DishPrice (#PCDATA)>
+							<!ATTLIST DishPrice Currency CDATA #FIXED "RM">
+				<!ELEMENT RestaurantCommission (CommissionRate)>
+					<!ELEMENT CommissionRate (#PCDATA)>
+		<!ELEMENT FoodLaiRider (Rider*)>
+			<!ELEMENT Rider (RiderName, RiderFullName, (RiderIC | RiderPassport), RiderEmail, RiderContact, RiderAddress)>
+				<!ATTLIST Rider RiderID ID #REQUIRED>
+				<!ELEMENT RiderName (#PCDATA)>
+				<!ELEMENT RiderFullName (#PCDATA)>
+				<!ELEMENT RiderIC (#PCDATA)>
+				<!ELEMENT RiderPassport (#PCDATA)>
+				<!ELEMENT RiderEmail (#PCDATA)>
+				<!ELEMENT RiderContact (#PCDATA)>
+				<!ELEMENT RiderAddress (#PCDATA)>
+		<!ELEMENT FoodLaiDiscount (Discount*)>
+			<!ELEMENT Discount (DiscountDescription, DiscountTotal, DiscountRequirement?)>
+				<!ATTLIST Discount DiscountCode ID #REQUIRED>
+				<!ELEMENT DiscountDescription (#PCDATA)>
+				<!ELEMENT DiscountTotal (#PCDATA)>
+					<!ATTLIST DiscountTotal Currency CDATA #FIXED "RM">
+				<!ELEMENT DiscountRequirement (#PCDATA)>
+					<!ATTLIST DiscountRequirement Currency CDATA #FIXED "RM">
+		<!ELEMENT FoodLaiStaffInfo (Staff+)>
+			<!ELEMENT Staff (StaffName, (StaffIC | StaffPassport), StaffEmail+, StaffContact+, StaffAddress)>
+			<!ATTLIST Staff StaffID ID #REQUIRED>
+			<!ELEMENT StaffName (#PCDATA)>
+			<!ELEMENT StaffIC (#PCDATA)>
+			<!ELEMENT StaffPassport (#PCDATA)>
+			<!ELEMENT StaffEmail (#PCDATA)>
+			<!ELEMENT StaffContact (#PCDATA)>
+			<!ELEMENT StaffAddress (#PCDATA)>
+		<!ELEMENT FoodLaiEmployee (Employee+)>
+			<!ELEMENT Employee (Position, MonthSalary)>
+			<!ATTLIST Employee EmployeeID IDREF #REQUIRED>
+			<!ELEMENT Position (#PCDATA)>
+			<!ELEMENT MonthSalary (#PCDATA)>
+				<!ATTLIST MonthSalary Currency CDATA #FIXED "RM">
+		<!ELEMENT FoodLaiRemark EMPTY>
+]>
+
+<FoodLai>
+	<FoodLaiMalaysia>
+		<CompanyName>&FoodLaiName;</CompanyName>
+		<CompanyAddress>&FoodLaiAddress;</CompanyAddress>
+		<CustomerServiceEmail>&FoodLaiCustomerServiceEmail;</CustomerServiceEmail>
+		<CustomerServiceContact>&FoodLaiCustomerServiceContact;</CustomerServiceContact>
+		<FoodLaiSlogan><![CDATA[Hungry? FoodLai!]]></FoodLaiSlogan>
+		<FoodLaiSlogan><![CDATA[Snacks? FoodLai!]]></FoodLaiSlogan>
+		<FoodLaiSlogan><![CDATA[Drinks? FoodLai!]]></FoodLaiSlogan>
+	</FoodLaiMalaysia>
+	<FoodLaiUser>
+		<User UserID="U1001">
+			<UserName>Lee Ah Beng</UserName>
+			<UserEmail>ahbeng@gmail.com</UserEmail>
+			<UserContact>0135789623</UserContact>
+			<UserAddress>No. 16, Jln Jambu Mawar 66, Taman Jambu Mawar, 14000</UserAddress>
+		</User>
+		<User UserID="U1002">
+			<UserName>Rees Simpson</UserName>
+			<UserEmail>test1@gmail.com</UserEmail>
+			<UserContact>0187963565</UserContact>
+			<UserAddress>No. 333, Jln Jambu Mawar 333, Taman Jambu Mawar, 14000</UserAddress>
+		</User>
+		<User UserID="U1003">
+			<UserName>Henna Kline</UserName>
+			<UserEmail>test2@gmail.com</UserEmail>
+			<UserContact>0109854464</UserContact>
+			<UserAddress>No. 32, Lorong Nangka 4, Taman Desa Damai, 14000</UserAddress>
+		</User>
+		<User UserID="U1005">
+			<UserName>Tan Hong Bock</UserName>
+			<UserEmail>test3@gmail.com</UserEmail>
+			<UserContact>0129935586</UserContact>
+			<UserAddress>No. 10, Lorong Nangka 10, Taman Desa Damai, 14000</UserAddress>
+		</User>
+		<User UserID="U1006">
+			<UserName>Chong Kah Cheng</UserName>
+			<UserEmail>test5@gmail.com</UserEmail>
+			<UserContact>0177413995</UserContact>
+			<UserAddress>No. 4, Lorong Nangka 2, Taman Desa Damai, 14000</UserAddress>
+		</User>
+		<User UserID="U1007">
+			<UserName>Wong Kar Lok</UserName>
+			<UserEmail>test6@gmail.com</UserEmail>
+			<UserContact>0199856321</UserContact>
+			<UserAddress>No. 6, Lorong Belimbing 1, Taman Belimbing, 14000</UserAddress>
+		</User>
+		<User UserID="U1008">
+			<UserName>Lim Eng Wah</UserName>
+			<UserEmail>test7@gmail.com</UserEmail>
+			<UserContact>0167783225</UserContact>
+			<UserAddress>No. 9, Lorong Jambu Madu 4, Taman Jambu Madu, 14000</UserAddress>
+		</User>
+		<User UserID="U1009">
+			<UserName>Gwee How Peng</UserName>
+			<UserEmail>test8@gmail.com</UserEmail>
+			<UserContact>0177123221</UserContact>
+			<UserAddress>No. 2, Lorong Jambu Madu 2, Taman Jambu Madu, 14000</UserAddress>
+		</User>
+	</FoodLaiUser>
+	<FoodLaiRestaurant>
+		<Restaurant RestaurantID="R20200826R9">
+			<RestaurantName>YS CharKwayTeow</RestaurantName>
+			<RestaurantEmail>ysckt@gmail.com</RestaurantEmail>
+			<RestaurantContact>0159517530</RestaurantContact>
+			<RestaurantAddress>No. 999, Jln Jambu Mawar 999, Taman Jambu Mawar, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RestaurantAddress>
+			<RestaurantPermit>PG 5219195-U</RestaurantPermit>
+			<RestaurantPermitExpired>2/2/2021</RestaurantPermitExpired>
+			<RestaurantMenu Type="Food">
+				<Dish DishID="M20200826R9D8">
+					<DishDescription>CharKwayTeow -Biasa</DishDescription>
+					 <DishPrice Currency="RM">5</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R9D9">
+					<DishDescription>CharKwayTeow +2Telur</DishDescription>
+					 <DishPrice Currency="RM">8</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R9D10">
+					<DishDescription>CharKwayTeow +1Telur</DishDescription>
+					 <DishPrice Currency="RM">6.5</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantMenu Type="AddOn">
+				<Dish DishID="M20200826R9DA1">
+					<DishDescription>Telur Mata</DishDescription>
+					 <DishPrice Currency="RM">1.5</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R9DA2">
+					<DishDescription>Telur Goreng</DishDescription>
+					 <DishPrice Currency="RM">1.5</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantMenu Type="Drink">
+				<Dish DishID="M20200826R9DK1">
+					<DishDescription>Kopi O</DishDescription>
+					 <DishPrice Currency="RM">0.8</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R9DK2">
+					<DishDescription>Kopi O Ice</DishDescription>
+					 <DishPrice Currency="RM">1.2</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantCommission>
+				<CommissionRate>5</CommissionRate>
+			</RestaurantCommission>
+		</Restaurant>
+		<Restaurant RestaurantID="R20200826R10">
+			<RestaurantName>JW WesternFood</RestaurantName>
+			<RestaurantEmail>jwwf@gmail.com</RestaurantEmail>
+			<RestaurantContact>0189753618</RestaurantContact>
+			<RestaurantAddress>No. 985, Jln Jambu Mawar 999, Taman Jambu Mawar, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RestaurantAddress>
+			<RestaurantPermit>PG 5219196-U</RestaurantPermit>
+			<RestaurantPermitExpired>5/3/2021</RestaurantPermitExpired>
+			<RestaurantMenu Type="Food">
+				<Dish DishID="M20200826R10D8">
+					<DishDescription>Chicken chop</DishDescription>
+					 <DishPrice Currency="RM">15</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R10D9">
+					<DishDescription>Fish and Chips</DishDescription>
+					 <DishPrice Currency="RM">13</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R10D10">
+					<DishDescription>Steak</DishDescription>
+					 <DishPrice Currency="RM">22</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantMenu Type="AddOn">
+				<Dish DishID="M20200826RD10A1">
+					<DishDescription>French fries</DishDescription>
+					 <DishPrice Currency="RM">5</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R10DA2">
+					<DishDescription>Coleslaw</DishDescription>
+					 <DishPrice Currency="RM">3</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R10DA3">
+					<DishDescription>Chicken nugget</DishDescription>
+					 <DishPrice Currency="RM">8</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantMenu Type="Drink">
+				<Dish DishID="M20200826R10DK1">
+					<DishDescription>Coca Cola</DishDescription>
+					 <DishPrice Currency="RM">3</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R10DK2">
+					<DishDescription>Iced lemon tea</DishDescription>
+					 <DishPrice Currency="RM">4.8</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R10DK3">
+					<DishDescription>Plain water</DishDescription>
+					 <DishPrice Currency="RM">0.5</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantCommission>
+				<CommissionRate>6</CommissionRate>
+			</RestaurantCommission>
+		</Restaurant>
+		<Restaurant RestaurantID="R20200826R11">
+			<RestaurantName>QC FriedRice</RestaurantName>
+			<RestaurantEmail>qcfr@gmail.com</RestaurantEmail>
+			<RestaurantContact>0177929779</RestaurantContact>
+			<RestaurantAddress>No. 925, Jln Jambu Mawar 998, Taman Jambu Mawar, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RestaurantAddress>
+			<RestaurantPermit>PG 5219196-U</RestaurantPermit>
+			<RestaurantPermitExpired>15/5/2021</RestaurantPermitExpired>
+			<RestaurantMenu Type="Food">
+				<Dish DishID="M20200826R11D8">
+					<DishDescription>Egg fried rice</DishDescription>
+					 <DishPrice Currency="RM">5</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R11D9">
+					<DishDescription>Pork chop fried rice</DishDescription>
+					 <DishPrice Currency="RM">10.5</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R11D10">
+					<DishDescription>Shrimp fried rice</DishDescription>
+					 <DishPrice Currency="RM">8.5</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantMenu Type="AddOn">
+				<Dish DishID="M20200826R11DA1">
+					<DishDescription>Deep fried pork chop</DishDescription>
+					 <DishPrice Currency="RM">6</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R11DA2">
+					<DishDescription>Shrimp</DishDescription>
+					 <DishPrice Currency="RM">4</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R11DA3">
+					<DishDescription>Luncheon meat</DishDescription>
+					 <DishPrice Currency="RM">2</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantMenu Type="Drink">
+				<Dish DishID="M20200826R11DK1">
+					<DishDescription>Herbal tea</DishDescription>
+					 <DishPrice Currency="RM">4</DishPrice>
+				</Dish>
+				<Dish DishID="M20200826R11DK2">
+					<DishDescription>Chinese tea</DishDescription>
+					 <DishPrice Currency="RM">0.5</DishPrice>
+				</Dish>
+			</RestaurantMenu>
+			<RestaurantCommission>
+				<CommissionRate>4</CommissionRate>
+			</RestaurantCommission>
+		</Restaurant>
+	</FoodLaiRestaurant>
+	<FoodLaiRider>
+		<Rider RiderID="H20200826H1">
+			<RiderName>Ah Lai</RiderName>
+			<RiderFullName>Ooi Lai</RiderFullName>
+			<RiderIC>990202079999</RiderIC>
+			<RiderEmail>ahlai99@gmail.com</RiderEmail>
+			<RiderContact>0151593570</RiderContact>
+			<RiderAddress>Y-2-2, Lorong Nangka 9, Taman Desa Damai, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RiderAddress>
+		</Rider>
+		<Rider RiderID="H20200826H101">
+			<RiderName>Kaizer</RiderName>
+			<RiderFullName>Kaizer Walabagamanapu</RiderFullName>
+			<RiderPassport>B25803690</RiderPassport>
+			<RiderEmail>kaizer92@gmail.com</RiderEmail>
+			<RiderContact>0158257193</RiderContact>
+			<RiderAddress>A-1-3, Lorong Nangka 1, Taman Desa Damai, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RiderAddress>
+		</Rider>
+		<Rider RiderID="H20200826H2">
+			<RiderName>Mike</RiderName>
+			<RiderFullName>Mike Wong Sze Ming</RiderFullName>
+			<RiderIC>951026043333</RiderIC>
+			<RiderEmail>mike95@gmail.com</RiderEmail>
+			<RiderContact>0169857742</RiderContact>
+			<RiderAddress>5, Jalan Jambu Mawar 3, Taman Jambu Mawar, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RiderAddress>
+		</Rider>
+		<Rider RiderID="H20200826H102">
+			<RiderName>Ling</RiderName>
+			<RiderFullName>Ling Shan Shan</RiderFullName>
+			<RiderPassport>B25803750</RiderPassport>
+			<RiderEmail>linss@gmail.com</RiderEmail>
+			<RiderContact>0178654534</RiderContact>
+			<RiderAddress>32, Lorong Nangka 4, Taman Desa Damai, 14000, Bukit Mertajam, Pulau Pinang, Malaysia.</RiderAddress>
+		</Rider>
+	</FoodLaiRider>
+	<FoodLaiDiscount>
+		<Discount DiscountCode="S9001">
+			<DiscountDescription>Hari Malaysia Hebat KawKaw!!!</DiscountDescription>
+			<DiscountTotal Currency="RM">10</DiscountTotal>
+			<DiscountRequirement Currency="RM">25</DiscountRequirement>
+		</Discount>
+		<Discount DiscountCode="S9002">
+			<DiscountDescription>Mid-Autumn Festival -RM9!!!</DiscountDescription>
+			<DiscountTotal Currency="RM">9</DiscountTotal>
+			<DiscountRequirement Currency="RM">20</DiscountRequirement>
+		</Discount>
+		<Discount DiscountCode="S9003">
+			<DiscountDescription>VIP Gift</DiscountDescription>
+			<DiscountTotal Currency="RM">3</DiscountTotal>
+		</Discount>
+	</FoodLaiDiscount>
+	<FoodLaiStaffInfo>
+		<Staff StaffID="YX9195">
+			<StaffName>Ong Yee Sheng</StaffName>
+			<StaffIC>960202079999</StaffIC>
+			<StaffEmail>yexingys@outlook.com</StaffEmail>
+			<StaffContact>0135219195</StaffContact>
+			<StaffAddress>No. 42, Jln Jambu Mawar 7, Taman Jambu Mawar, 14000</StaffAddress>
+		</Staff>
+		<Staff StaffID="YX1001">
+			<StaffName>Xiao Yue</StaffName>
+			<StaffPassport>Y951357953</StaffPassport>
+			<StaffEmail>xiaoyue@outlook.com</StaffEmail>
+			<StaffContact>0135209195</StaffContact>
+			<StaffAddress>No. 42, Jln Jambu Mawar 7, Taman Jambu Mawar, 14000</StaffAddress>
+		</Staff>
+	</FoodLaiStaffInfo>
+	<FoodLaiEmployee>
+		<Employee EmployeeID="YX9195">
+			<Position>Manager</Position>
+			<MonthSalary Currency="RM">9999</MonthSalary>
+		</Employee>
+		<Employee EmployeeID="YX1001">
+			<Position>Accountant</Position>
+			<MonthSalary Currency="RM">6666</MonthSalary>
+		</Employee>
+	</FoodLaiEmployee>
+	<FoodLaiRemark></FoodLaiRemark>
+</FoodLai>
